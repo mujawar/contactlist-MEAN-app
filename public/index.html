@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>This is driver app</title>
+</head>
+<body>
+<div class="container" ng-controller="myCtrl">
+    <h1>This Driver  Registration app</h1>
+   <!-- <input ng-model="test">
+    <h1>{{test}}</h1>-->
+    <table class="table">
+        <thead>
+        <tr>
+            <th style="width:20%">Name</th>
+            <th style="width:20%"> number</th>
+            <th style="width:20%">address</th>
+            <th style="width:20%">Licence</th>
+            <th style="width:20%">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input class="form-control" ng-model="driver.name"></td>
+            <td><input class="form-control" ng-model="driver.number"></td>
+            <td><input class="form-control" ng-model="driver.address"></td>
+            <td><input class="form-control" ng-model="driver.linces"></td>
+            <td><button class="btn-primary" ng-click="AddDetails()">Add</button></td>
+            <td><button class="btn-primary" ng-click="update()">update</button></td>
+            <td><button class="btn-primary" ng-click="clear()">clear</button></td>
+
+
+        </tr>
+           <tr ng-repeat="driver in driverlist">
+               <td>{{driver.name}}</td>
+               <td>{{driver.number}}</td>
+               <td>{{driver.address}}</td>
+               <td>{{driver.linces}}</td>
+               <td><button class="btn-danger" ng-click="remove(driver)">Remove</button></td>
+               <td><button class="btn-danger" ng-click="Edit(driver._id)">Edit</button></td>
+
+           </tr>
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.24/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
